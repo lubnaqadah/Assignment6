@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Assignment 6</title>
+           
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+       <link href="jumbotron-narrow.css" rel="stylesheet">
+        
+        
+    </head>
+    <body>
+        
+    <div class="container">
+      <div class="header clearfix">
+       <img src="images.png" alt="logo">
+       
+        <h3 class="text-muted">Pizza Order Form</h3>
+      </div>
+
+      <div class="jumbotron">
+        <h2>Order Your Favorite Pizza Online!</h2>
+        
+      </div>
+
+      <h2>Delivery Location</h2>
+     
+     
+        <div class="col-lg-12">
+      <form class="form-horizontal" >
+
+		  <br>
+		  <p id="error"> </p>
+		  
+        <div class="form-group">
+			<label for="name" class="col-sm-4 control-label">Name</label>
+            <div class="col-sm-6">
+            <input type="text" class="form-control" id="name" placeholder="First & Last Name" >	
+			
+            </div>
+        </div>  <!-- Name -->
+
+        <div class="form-group">
+        
+          <label for="addresstype" class="col-sm-4 control-label">Address Type</label>
+        <div class="col-sm-6 ">
+          <select class="form-control" id="addresstype">
+            <option value="1" selected>House</option>
+            <option value="2">apartment</option>
+            <option value="3">business</option>
+            <option value="4">campus</option>
+            <option value="5">hotel</option>
+            <option value="6">dorm</option>
+            <option value="7">other</option>
+          </select>
+            </div>
+        </div>  <!-- address type -->
+       
+        <div class="form-group" id="otheraddress" style="display:none" >
+            <label for="other" class="col-sm-4 control-label">Other Address</label>
+            <div class="col-sm-6">
+            <input type="other" class="form-control" id="other" >                         
+            </div>
+        </div>  <!-- address -->
+       
+        <div class="form-group">
+            <label for="address" class="col-sm-4 control-label">Address</label>
+            <div class="col-sm-6">
+            <input type="address" class="form-control" id="address" name="address">                         
+            </div>
+        </div>  <!-- address -->
+
+        <div class="form-group">
+            <label for="phone" class="col-sm-4 control-label">Phone Number</label>
+            <div class="col-sm-6">
+            <input type="tel" class="form-control" id="phone" name="phone" placeholder="example(000-000-0000)">
+            </div>
+        </div>  <!-- phone -->
+
+        <div class="form-group">
+            <label for="city" class="col-sm-4 control-label">City</label>
+            <div class="col-sm-6">
+            <input type="city" class="form-control" id="city" name="city">                          
+            </div>
+        </div>  <!-- city -->
+        
+        <div class="form-group">
+            <label for="state" class="col-sm-4 control-label">State</label>
+            <div class="col-sm-6">
+            <input type="state" class="form-control" id="state">                          
+            </div>
+        </div>  <!-- state -->
+        
+        <div class="form-group">
+            <label for="zip" class="col-sm-4 control-label">Zip Code</label>
+            <div class="col-sm-6">
+            <input type="zip" class="form-control" id="zip" >                          
+            </div>
+        </div>  <!-- zip -->
+		  
+		<div class="form-group">
+            <label for="email" class="col-sm-4 control-label">E-mail</label>
+            <div class="col-sm-6">
+            <input type="email" class="form-control" id="email" placeholder="me@example.com">                          
+            </div>
+        </div>  <!--email-->
+
+       <hr>
+       
+       <h2>Build Your Order</h2>
+        
+        
+        
+        <div class="form-group">
+        <label class="col-sm-4 control-label">What kind of crust you like?</label><br><br>
+        <div class="radio control-label col-sm-4 col-sm-offset-4" id="dough">
+            <label><input type="radio" name="optradio" id="tossed">Hand Tossed </label><br>
+            <label><input type="radio" name="optradio" id="thin">Thin Crust </label><br>
+			<label><input type="radio" name="optradio" id="newyork">New York Style</label><br>
+            <label><input type="radio" name="optradio" id="gluten">Gluten Free</label>
+        </div>
+
+        </div>
+        
+<!--        for hand tossed-->
+        <div class="form-group" id="handtossed" style="display:none">
+          <label for="handtossed" class="col-sm-4 control-label">Please select the size</label>
+        <div class="col-sm-6 ">
+          <select class="form-control" id="tossedsize">
+            <option value="12.99">Small ($9.99)</option>
+            <option value="12.99">Medium ($12.99)</option>
+            <option value="14.99">Large ($14.99)</option>
+          </select>
+            </div>
+        </div> 
+        
+          <!--        for Thin Crust -->
+           <div class="form-group" style="display:none" id="thincrust">
+          <label for="thincrust" class="col-sm-4 control-label">Please select the size</label>
+        <div class="col-sm-6 ">
+          <select class="form-control" id="thinsize">
+            <option value="11.99">Medium ($11.99)</option>
+            <option value="13.99">Large ($13.99)</option>
+          </select>
+            </div>
+        </div> 
+
+
+        <!--        for New York Style  -->
+           <div class="form-group" style="display:none" id="ny">
+          <label for="ny" class="col-sm-4 control-label">Please select the size</label>
+        <div class="col-sm-6">
+          <select class="form-control" id="nysize">
+            <option value="16.99">Large ($16.99)</option>
+            <option value="19.99">Extra Large ($19.99)</option>
+          </select>
+            </div>
+        </div> 
+
+
+        <!--       for Gluten Free  -->
+           <div class="form-group" style="display:none" id="gf">
+          <label for="gf" class="col-sm-4 control-label">Please select the size</label>
+        <div class="col-sm-6">
+          <select class="form-control" id="gfsize">
+            <option value="10.99">Small ($10.99)</option>
+            
+          </select>
+            </div>
+        </div> 
+
+
+        <!--        for cheese-->
+        <div class="form-group">
+          <label for="handtossed" class="col-sm-4 control-label">Cheese preference</label>
+        <div class="col-sm-6 ">
+          <select class="form-control" id="cheese">
+            <option value="0">Light</option>
+            <option value="0" selected>Normal</option>
+            <option value="2.99">Extra +$2.99</option>
+            <option value="3.99">Double +$3.99</option>
+          </select>
+            </div>
+        </div> 
+        
+        
+        <!--        for souce-->
+        <div class="form-group">
+          <label class="col-sm-4 control-label">Souce preference</label>
+        <div class="col-sm-6">
+          <select class="form-control" id="souce">
+            <option>Regular Tomato</option>
+            <option value="0.99" selected>Hearty Tomato: +$.99</option>
+            <option value="1.99">BBQ Sauce: +$1.99</option>
+          </select>
+            </div>
+        </div> <br>
+		 
+	 <div class="form-group">
+	   <label class="col-sm-8 control-label">You can add the following toppings for 0.99$ each.</label><br><br>
+       <div class="col-sm-4 col-sm-offset-4" id="toppings">	  
+	   <input type="checkbox" name="toppings" value="pepperoni">Pepperoni<br>  
+	   <input type="checkbox" name="toppings" value="sausage">Sausage<br>  
+	   <input type="checkbox" name="toppings" value="ham">Ham<br>  
+	   <input type="checkbox" name="toppings" value="bacon">Bacon<br>
+	   <input type="checkbox" name="toppings" value="salami">Salami<br> 
+	   <input type="checkbox" name="toppings" value="peppers">Peppers<br>
+	   <input type="checkbox" name="toppings" value="olives">Olives<br>
+	   <input type="checkbox" name="toppings" value="jalapenos">Jalapenos<br>
+	   <input type="checkbox" name="toppings" value="mushrom">Mushrom<br>
+	   <input type="checkbox" name="toppings" value="pineaple">Pineapple<br>
+	   <input type="checkbox" name="toppings" value="onion">Onion<br>
+		 </div></div>
+
+		  
+		  <br><br>
+        <div class="form-group">
+            <div class="col-sm-4 col-sm-offset-4">
+				<button id="submit" class="btn btn-danger">Submit</button>
+                <button id="clear" type="reset" class="btn btn-danger">Clear</button>
+            </div>
+        </div>    
+
+        
+        </form> 
+			
+				
+	<div>
+		<p  id="total">Total: 0</p>
+		</div>
+		
+        </div>
+
+     
+      
+
+      <footer class="footer">
+        <p>&copy; 2016 Pizza, Inc.</p>
+      </footer>
+
+	
+		
+    </div> <!-- /container -->
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+		<script   src="https://code.jquery.com/jquery-3.1.0.js"   integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="   crossorigin="anonymous"></script>
+		 <script src="assignment6.js"></script>
+    </body>
+    
+</html>
