@@ -20,7 +20,7 @@
         <h3 class="text-muted">Pizza Order Form</h3>
       </div>
 
-      <div class="jumbotron">
+      <div class="jumbotron" id="jumb">
         <h2>Order Your Favorite Pizza Online!</h2>
         
       </div>
@@ -34,6 +34,9 @@
 		  <br>
 		  <p id="error"> </p>
 		  
+		  
+		<div id="build">
+			
         <div class="form-group">
 			<label for="name" class="col-sm-4 control-label">Name</label>
             <div class="col-sm-6">
@@ -108,7 +111,8 @@
         </div>  <!--email-->
 
        <hr>
-       
+       <div id="order">
+		  
        <h2>Build Your Order</h2>
         
         
@@ -129,6 +133,7 @@
           <label for="handtossed" class="col-sm-4 control-label">Please select the size</label>
         <div class="col-sm-6 ">
           <select class="form-control" id="tossedsize">
+			<option value="0">Please select</option>
             <option value="12.99">Small ($9.99)</option>
             <option value="12.99">Medium ($12.99)</option>
             <option value="14.99">Large ($14.99)</option>
@@ -141,6 +146,7 @@
           <label for="thincrust" class="col-sm-4 control-label">Please select the size</label>
         <div class="col-sm-6 ">
           <select class="form-control" id="thinsize">
+			<option value="0">Please select</option>  
             <option value="11.99">Medium ($11.99)</option>
             <option value="13.99">Large ($13.99)</option>
           </select>
@@ -153,6 +159,7 @@
           <label for="ny" class="col-sm-4 control-label">Please select the size</label>
         <div class="col-sm-6">
           <select class="form-control" id="nysize">
+			<option value="0">Please select</option>
             <option value="16.99">Large ($16.99)</option>
             <option value="19.99">Extra Large ($19.99)</option>
           </select>
@@ -165,6 +172,7 @@
           <label for="gf" class="col-sm-4 control-label">Please select the size</label>
         <div class="col-sm-6">
           <select class="form-control" id="gfsize">
+            <option value="0">Please select</option>
             <option value="10.99">Small ($10.99)</option>
             
           </select>
@@ -191,8 +199,8 @@
           <label class="col-sm-4 control-label">Souce preference</label>
         <div class="col-sm-6">
           <select class="form-control" id="souce">
-            <option>Regular Tomato</option>
-            <option value="0.99" selected>Hearty Tomato: +$.99</option>
+            <option value="0" selected>Regular Tomato</option>
+            <option value="0.99" >Hearty Tomato: +$.99</option>
             <option value="1.99">BBQ Sauce: +$1.99</option>
           </select>
             </div>
@@ -218,23 +226,135 @@
 		  <br><br>
         <div class="form-group">
             <div class="col-sm-4 col-sm-offset-4">
-				<button id="submit" class="btn btn-danger">Submit</button>
-                <button id="clear" type="reset" class="btn btn-danger">Clear</button>
+				<button id="finish" class="btn btn-danger">Finish Order</button>
             </div>
         </div>    
 
-        
-        </form> 
-			
-				
-	<div>
+		   			
+		<div>
 		<p  id="total">Total: 0</p>
 		</div>
+        </div>
+			
+	 </div>		  
+		  
+		  
+	<div id="billing" style="display: none">
+			
+				
+				<div class="form-group  ">
+					<div class="col-sm-offset-4 col-sm-8" id="delivery">
+					<input type="checkbox" name="same" id="same"/>
+					Same as delivery information
+					</div>
+				</div>
+			    
+        <div class="form-group">
+			<label for="name" class="col-sm-4 control-label">Name</label>
+            <div class="col-sm-6">
+            <input type="text" class="form-control" id="name2" placeholder="First & Last Name" >	
+			
+            </div>
+        </div>  <!-- Name -->
+
+    
+        <div class="form-group">
+            <label for="address" class="col-sm-4 control-label">Address</label>
+            <div class="col-sm-6">
+            <input type="address" class="form-control" id="address2" name="address">                         
+            </div>
+        </div>  <!-- address -->
+
+        <div class="form-group">
+            <label for="phone" class="col-sm-4 control-label">Phone Number</label>
+            <div class="col-sm-6">
+            <input type="tel" class="form-control" id="phone2" name="phone" placeholder="example(000-000-0000)">
+            </div>
+        </div>  <!-- phone -->
+
+        <div class="form-group">
+            <label for="city" class="col-sm-4 control-label">City</label>
+            <div class="col-sm-6">
+            <input type="city" class="form-control" id="city2" name="city">                          
+            </div>
+        </div>  <!-- city -->
+        
+        <div class="form-group">
+            <label for="state" class="col-sm-4 control-label">State</label>
+            <div class="col-sm-6">
+            <input type="state" class="form-control" id="state2">                          
+            </div>
+        </div>  <!-- state -->
+        
+        <div class="form-group">
+            <label for="zip" class="col-sm-4 control-label">Zip Code</label>
+            <div class="col-sm-6">
+            <input type="zip" class="form-control" id="zip2" >                          
+            </div>
+        </div>  <!-- zip -->
+			  
+		<div  class="form-group">
+			<label for="credit" class="control-label col-sm-4">Credit Card Number:</label>
+			<div class="col-sm-6">
+				<input type="text" name="credit" id="creditNum" class="form-control" />
+			</div>
+		</div>
+			  
+		<div class="form-group">
+			<label for="cvc" class="control-label col-sm-4">CVC Code</label>
+			<div class="col-sm-6">
+				<input type="text" name="cvc" class="form-control" id="cvc" placeholder = "123" />
+			</div>
+		</div>
+			  
+		<div class="form-group">
+		<label for="month" class="control-label col-sm-4">Expiration</label>
+		<div class="col-sm-3">
+			<select name="month" class="form-control" id="month">
+				<option value="1">01-Jan</option>
+				<option value="2">02-Feb</option>
+				<option value="3">03-Mar</option>
+				<option value="4">04-Apr</option>
+				<option value="5">05-May</option>
+				<option value="6">06-Jun</option>
+				<option value="7">07-Jul</option>
+				<option value="8">08-Aug</option>
+				<option value="9">09-Sep</option>
+				<option value="10">10-Oct</option>
+				<option value="11">11-Nov</option>
+				<option value="12">12-Dec</option>
+			</select>
+		</div>
+		<div class="col-sm-3">
+			<select name="year" class="form-control" id="year">
+				<option value="2017">2016</option>
+				<option value="2017">2017</option>
+				<option value="2018">2018</option>
+				<option value="2019">2019</option>
+				<option value="2020">2020</option>
+				<option value="2020">2021</option>
+			</select>
+		</div>
+		</div>
 		
+		  <br><br>
+        <div class="form-group">
+            <div class="col-sm-4 col-sm-offset-4">
+				<button id="submit" class="btn btn-danger">Submit</button>
+            </div>
+        </div>    
+
+</div>
+		  
+	 <div class="jumbotron" id="thanks" style="display:none">
+        <h2>Thank you for ordering Pizza Online!</h2>
+        
+      </div>
+		  
+        </form> 
+			
         </div>
 
-     
-      
 
       <footer class="footer">
         <p>&copy; 2016 Pizza, Inc.</p>
